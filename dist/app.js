@@ -18,6 +18,10 @@ app.use("/users", user_router_1.userRouter);
 app.use((0, cors_1.default)({
     origin: "*"
 }));
+app.use((req, res, next) => {
+    res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self' https://vercel.live");
+    next();
+});
 app.use("*", (err, req, res, next) => {
     return res.status(err?.status || 500).json({
         message: err?.message,
