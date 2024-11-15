@@ -9,8 +9,8 @@ class AuthController {
       const body = req.body as Partial<IUser>;
 
       const user = await authService.signUp(body);
-
       return res.json({ data: user });
+
     } catch (e) {
       next(e);
     }

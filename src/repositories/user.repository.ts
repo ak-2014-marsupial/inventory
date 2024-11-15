@@ -3,7 +3,7 @@ import { User } from "../models/user.model";
 
 class UserRepository {
   public async getAll(): Promise<IUser[]> {
-    return await User.find({});
+    return User.find({});
   }
 
   public async getById(id: string): Promise<IUser> {

@@ -19,7 +19,7 @@ app.use((0, cors_1.default)({
     origin: "*"
 }));
 app.use((req, res, next) => {
-    res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self' https://vercel.live");
+    res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self' https://vercel.live https://*.vercel.app; connect-src 'self' https://vercel.live https://*.vercel.app");
     next();
 });
 app.use("*", (err, req, res, next) => {

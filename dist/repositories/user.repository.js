@@ -4,7 +4,7 @@ exports.userRepository = void 0;
 const user_model_1 = require("../models/user.model");
 class UserRepository {
     async getAll() {
-        return await user_model_1.User.find({});
+        return user_model_1.User.find({});
     }
     async getById(id) {
         return user_model_1.User.findOne({ _id: id });
