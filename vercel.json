@@ -1,34 +1,7 @@
 {
- "version": 2,
-  "builds": [
-    {
-      "src": "/api/app.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "/front/**.*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/app.js"
-    },
-     {
-      "src": "front/(.*)",
-      "dest": "/front/$1"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://vercel.live"
-        }
-      ]
+  "rewrites": [
+    {"source": "/api/(.*)",
+    "destination": "/api"
     }
   ]
 }
